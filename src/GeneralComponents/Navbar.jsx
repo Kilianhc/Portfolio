@@ -2,9 +2,9 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 const Navbar = () => (
-  <AppBar position="sticky" sx={{ backgroundColor: "#1976d2" }}>
+  <AppBar position="sticky" sx={{ backgroundColor: "black" }}>
     <Toolbar>
-      <Typography variant="h6" sx={{ flexGrow: 1 }}>
+      <Typography variant="h6" onClick={() => document.getElementById("hero").scrollIntoView({ behavior: "smooth" })} sx={{ flexGrow: 1, cursor:"pointer" }}>
         Kilian D. Hernández Chirino
       </Typography>
       <Button color="inherit" onClick={() => document.getElementById("hero").scrollIntoView({ behavior: "smooth" })}>

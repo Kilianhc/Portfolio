@@ -12,20 +12,20 @@ const projects = [
     {
         title: "FootballStats",
         description: "Un e-commerce construido con React y Firebase.",
-        image: "/images/ecommerce.png",
+        image: "src/assets/images/football-stats.png",
         link: "https://miecommerce.com",
     },
     {
         title: "KiMovie",
         description: "Panel de administración con estadísticas y gráficos.",
-        image: "/images/dashboard.png",
+        image: "src/assets/images/ki-movie.png",
         link: "https://midashboard.com",
     },
 ];
 
 
 const ProjectsSection = () => {
-    const [ref, isVisible] = useVisibility(0.7);
+    const [ref, isVisible] = useVisibility(0.3);
 
     return (
         <Box id="projects" ref={ref} sx={{ padding: "80px 0", backgroundColor: "#e3f2fd" }}>

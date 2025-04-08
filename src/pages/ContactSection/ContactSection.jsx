@@ -3,7 +3,7 @@ import { Box, Container, Typography, Button, Fade } from "@mui/material";
 import useVisibility from "../../Hooks/useVisibility";
 
 const ContactSection = () => {
-  const [ref, isVisible] = useVisibility(0.7);
+  const [ref, isVisible] = useVisibility(0.3);
 
   return (
     <Box id="contact" ref={ref} sx={{ padding: "80px 0", backgroundColor: "black", color: "#fff" }}>

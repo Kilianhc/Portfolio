@@ -6,7 +6,7 @@ const AboutSection = () => {
     const [ref, isVisible] = useVisibility(0.7);
   
     return (
-      <Box id="about" ref={ref} sx={{ padding: "80px 0", backgroundColor: "#f4f4f4" }}>
+      <Box id="about" ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
         <Container>
           <Fade in={isVisible} timeout={2000}>
             <div>

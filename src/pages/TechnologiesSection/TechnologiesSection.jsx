@@ -39,13 +39,13 @@ const TechnologiesSection = () => {
   return (
     <Box id="technologies" ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
       <Container>
-        <Typography variant="h4" gutterBottom mb={3} align="center">
+        <Typography variant="h4" gutterBottom mb={2} align="center">
           Tecnologías
         </Typography>
 
         {Object.entries(categorizedTechnologies).map(([category, techs], index) => (
           <Box key={category} sx={{ marginBottom: "40px" }}>
-            <Typography variant="h6" color="primary" gutterBottom mb={3}>
+            <Typography variant="h6" color="primary" gutterBottom mb={2}>
               {category}
             </Typography>
             <Grid container spacing={4}>

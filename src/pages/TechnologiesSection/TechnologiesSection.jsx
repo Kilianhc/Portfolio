@@ -37,18 +37,18 @@ const TechnologiesSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
 
   return (
-    <Box id="technologies" ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
+    <Box id="technologies"ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
       <Container>
-        <Typography variant="h4" gutterBottom mb={2} align="center">
+        <Typography variant="h4" gutterBottom mb={2} >
           Tecnologías
         </Typography>
 
         {Object.entries(categorizedTechnologies).map(([category, techs], index) => (
           <Box key={category} sx={{ marginBottom: "40px" }}>
-            <Typography variant="h6" color="primary" gutterBottom mb={2}>
+            <Typography variant="h6" color="primary" gutterBottom mb={2} textAlign="center" >
               {category}
             </Typography>
-            <Grid container spacing={4}>
+            <Grid container spacing={4} justifyContent="center">
               {techs.map((tech, idx) => (
                 <Grid item xs={12} sm={6} md={3} key={idx}>
                   <Fade in={isVisible} timeout={2000}>

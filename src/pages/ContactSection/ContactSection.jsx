@@ -11,7 +11,7 @@ const ContactSection = () => {
       id="contact"
       ref={ref}
       sx={{
-        padding: "80px 0",
+        padding: "50px 0",
         backgroundColor: "black",
         color: "#fff",
         textAlign: "center",
@@ -20,7 +20,7 @@ const ContactSection = () => {
       <Container>
         <Fade in={isVisible} timeout={2000}>
           <Box>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" gutterBottom textAlign="left">
               Contacto
             </Typography>
             <Typography variant="body1" paragraph>

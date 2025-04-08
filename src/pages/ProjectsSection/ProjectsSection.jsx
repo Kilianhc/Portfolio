@@ -10,13 +10,13 @@ const projects = [
         link: "https://tuportafolio.com",
     },
     {
-        title: "E-commerce React",
+        title: "FootballStats",
         description: "Un e-commerce construido con React y Firebase.",
         image: "/images/ecommerce.png",
         link: "https://miecommerce.com",
     },
     {
-        title: "Dashboard Admin",
+        title: "KiMovie",
         description: "Panel de administración con estadísticas y gráficos.",
         image: "/images/dashboard.png",
         link: "https://midashboard.com",
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <Fade in={isVisible} timeout={2000}>
                                 <Card sx={{ boxShadow: 3 }}>
-                                    <CardMedia component="img" height="200" image={project.image} alt={project.title} />
+                                    <CardMedia component="img" height="200" width="400" image={project.image} alt={project.title} />
                                     <CardContent>
                                         <Typography variant="h6" gutterBottom>
                                             {project.title}
@@ -47,11 +47,20 @@ const ProjectsSection = () => {
                                         <Button
                                             variant="contained"
                                             color="primary"
-                                            sx={{ marginTop: "10px" }}
+                                            sx={{ marginTop: "10px", marginRight:"10px" }}
                                             href={project.link}
                                             target="_blank"
                                         >
                                             Ver Proyecto
+                                        </Button>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            sx={{ marginTop: "10px" }}
+                                            href={project.link}
+                                            target="_blank"
+                                        >
+                                            Ver Repositorio
                                         </Button>
                                     </CardContent>
                                 </Card>

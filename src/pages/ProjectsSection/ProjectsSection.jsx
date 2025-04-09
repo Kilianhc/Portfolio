@@ -37,7 +37,7 @@ const ProjectsSection = () => {
     const [ref, isVisible] = useVisibility(0.3);
 
     return (
-        <Box id="projects" ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
+        <Box id="projects" ref={ref} sx={{ padding: "80px 0" }}>
             <Container>
                 <Typography mb={5} variant="h4" gutterBottom>
                     Proyectos Destacados
@@ -49,7 +49,6 @@ const ProjectsSection = () => {
                                 <Card
                                     sx={{
                                         color: "white",
-                                        backgroundColor: "black",
                                         boxShadow: 3,
                                         maxWidth: "350px",
                                         borderRadius: "12px",

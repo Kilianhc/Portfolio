@@ -10,7 +10,7 @@ const AboutSection = () => {
   const handleToggle = () => setShowMore(!showMore);
 
   return (
-    <Box id="about" mb={3} mt={3} ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
+    <Box id="about" mb={3} mt={3} ref={ref} sx={{ padding: "80px 0" }}>
       <Container>
         <Typography mb={5} variant="h4" gutterBottom>
           Sobre mí

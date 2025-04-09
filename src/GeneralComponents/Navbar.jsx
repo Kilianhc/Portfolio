@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -10,7 +10,9 @@ import {
   ListItem,
   ListItemText,
   Box,
-  useMediaQuery
+  Switch,
+  useMediaQuery,
+  Paper
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -22,61 +24,90 @@ const sections = [
   { id: "contact", label: "Contacto" }
 ];
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md")); // Verifica si la pantalla es pequeña
+const Navbar = ({ toggleDarkMode, darkMode }) => {
+  const [open, setOpen] = React.useState(false);
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false); // Cierra el drawer si estás en móvil
+    setOpen(false);
   };
 
   return (
-    <>
-      <AppBar position="sticky" sx={{ backgroundColor: "black" }}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            onClick={() => scrollToSection("hero")}
-            sx={{ flexGrow: 1, cursor: "pointer" }}
-          >
-            Kilian D. Hernández Chirino
+    <AppBar position="sticky" sx={{ bgcolor: "black" }}>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          onClick={() => scrollToSection("hero")}
+          sx={{ flexGrow: 1, cursor: "pointer", color: "white" }}
+        >
+          Kilian D. Hernández Chirino
+        </Typography>
+
+        <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+          <Typography variant="body2" mr={1} sx={{ color: "white" }}>
+            Modo Oscuro
           </Typography>
-
-          {/* Mostrar hamburguesa solo en móvil */}
-          {isMobile ? (
-            <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
-              <MenuIcon />
-            </IconButton>
-          ) : (
-            // Mostrar los botones de navegación en pantallas grandes
-            sections.map((section) => (
-              <Button key={section.id} color="inherit" onClick={() => scrollToSection(section.id)}>
-                {section.label}
-              </Button>
-            ))
-          )}
-        </Toolbar>
-      </AppBar>
-
-      {/* Drawer lateral para móvil */}
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250, p: 2 }}>
-          <Box justifyContent="flex-end">
-            <IconButton onClick={() => setOpen(false)}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <List>
-            {sections.map((section) => (
-              <ListItem sx={{cursor:"pointer"}} button key={section.id} onClick={() => scrollToSection(section.id)}>
-                <ListItemText primary={section.label} />
-              </ListItem>
-            ))}
-          </List>
+          <Switch checked={darkMode} onChange={toggleDarkMode} />
         </Box>
-      </Drawer>
-    </>
+
+        {isMobile ? (
+          <>
+            <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
+              <MenuIcon sx={{ color: "white" }} />
+            </IconButton>
+            <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+              <Paper 
+                sx={{ 
+                  width: 250, 
+                  height: '100%',
+                  bgcolor: darkMode ? 'black' : 'white',
+                  color: darkMode ? 'white' : 'black'
+                }}
+              >
+                <Box sx={{ p: 2 }}>
+                  <Box display="flex" justifyContent="flex-end">
+                    <IconButton onClick={() => setOpen(false)}>
+                      <CloseIcon sx={{ color: darkMode ? 'white' : 'black' }} />
+                    </IconButton>
+                  </Box>
+                  <List>
+                    {sections.map((section) => (
+                      <ListItem 
+                        sx={{ 
+                          cursor: "pointer",
+                          color: darkMode ? 'white' : 'black'
+                        }} 
+                        button 
+                        key={section.id} 
+                        onClick={() => scrollToSection(section.id)}
+                      >
+                        <ListItemText primary={section.label} />
+                      </ListItem>
+                    ))}
+                  </List>
+
+                  <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+                    <Typography variant="body2">Modo Oscuro</Typography>
+                    <Switch checked={darkMode} onChange={toggleDarkMode} />
+                  </Box>
+                </Box>
+              </Paper>
+            </Drawer>
+          </>
+        ) : (
+          sections.map((section) => (
+            <Button 
+              key={section.id} 
+              sx={{ color: "white" }} 
+              onClick={() => scrollToSection(section.id)}
+            >
+              {section.label}
+            </Button>
+          ))
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 

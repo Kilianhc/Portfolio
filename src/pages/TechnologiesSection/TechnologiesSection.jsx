@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Fade } from "@mui/material";
+import { Box, Container, Typography, Grid, Fade, Paper, useTheme } from "@mui/material";
 import {
   FaReact,
   FaJs,
@@ -35,9 +35,10 @@ const categorizedTechnologies = {
 
 const TechnologiesSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
+  const theme = useTheme(); // Accedemos al tema actual
 
   return (
-    <Box id="technologies"ref={ref} sx={{ padding: "80px 0", backgroundColor: "white" }}>
+    <Box id="technologies"ref={ref} sx={{ padding: "80px 0" }}>
       <Container>
         <Typography variant="h4" gutterBottom mb={2} >
           Tecnologías
@@ -52,7 +53,8 @@ const TechnologiesSection = () => {
               {techs.map((tech, idx) => (
                 <Grid item xs={12} sm={6} md={3} key={idx}>
                   <Fade in={isVisible} timeout={2000}>
-                    <Box
+                    <Paper
+                    elevation={3}
                       sx={{
                         padding: "30px 20px",
                         width: "120px",
@@ -65,7 +67,7 @@ const TechnologiesSection = () => {
                         "&:hover": {
                           transform: "scale(1.05)",
                           boxShadow: 6,
-                          backgroundColor: "#e3f2fd",
+                          backgroundColor: theme.palette.mode === 'dark' ? 'action.hover' : 'action.hover',
                           cursor: "pointer",
                         },
                       }}
@@ -74,7 +76,7 @@ const TechnologiesSection = () => {
                       <Typography variant="subtitle1" sx={{ marginTop: "12px" }}>
                         {tech.name}
                       </Typography>
-                    </Box>
+                    </Paper>
                   </Fade>
                 </Grid>
               ))}

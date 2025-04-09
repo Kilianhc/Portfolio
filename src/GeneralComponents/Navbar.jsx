@@ -7,9 +7,6 @@ const Navbar = () => (
       <Typography variant="h6" onClick={() => document.getElementById("hero").scrollIntoView({ behavior: "smooth" })} sx={{ flexGrow: 1, cursor:"pointer" }}>
         Kilian D. Hernández Chirino
       </Typography>
-      <Button color="inherit" onClick={() => document.getElementById("hero").scrollIntoView({ behavior: "smooth" })}>
-        Inicio
-      </Button>
       <Button color="inherit" onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}>
         Sobre mí
       </Button>

@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import useVisibility from "../../Hooks/useVisibility";
 
 const HeroSection = () => {
-  const [ref, isVisible] = useVisibility(0.1);
+  const [ref, isVisible] = useVisibility(0.3);
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const HeroSection = () => {
     const drops = Array(columns).fill(1);
 
     const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.055)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.009)";
       ctx.fillRect(0, 0, width, height);
       ctx.fillStyle = "blue";
       ctx.font = fontSize + "px monospace";
@@ -73,7 +73,7 @@ const HeroSection = () => {
           gutterBottom
           sx={{
             fontFamily: "monospace",
-            textShadow: "0 0 10px #0f0",
+            textShadow: "0 0 10px white",
             color:"white",
             animation: isVisible ? "fadeIn 5s ease-out" : "none",
           }}
@@ -81,10 +81,10 @@ const HeroSection = () => {
           Kilian Hernández
         </Typography>
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{
             fontFamily: "monospace",
-            textShadow: "0 0 5px #0f0",
+            textShadow: "0 0 5px white",
             color:"white",
             animation: isVisible ? "fadeIn 5s ease-out" : "none",
           }}

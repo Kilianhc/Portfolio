@@ -5,44 +5,40 @@ import SeeMore from "../../GeneralComponents/SeeMore";
 import { Chip } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
-const projects = [
-
-    {
-        title: "FootballStats",
-        description: "FootballStats es una aplicación Full-stack desarrollada con el stack MERN (MongoDB, Express, React y Node.js). Permite gestionar estadísticas de fútbol para equipos y jugadores, ofreciendo herramientas tanto para analistas como para entrenadores.",
-        image: "src/assets/images/football-stats.png",
-        link: "https://analyststats.netlify.app/",
-        repository: "https://github.com/Kilianhc/FootballStats-Frontend",
-        technologies: ["React", "JavaScript", "Node.js", "Express", "MongoDB", "MUI", "JWT", "Axios", "Mongoose", "Google Gemini AI", "Google Perspective API", "bcrypt.js", "Express Rate Limit"]
-    },
-    {
-        title: "KiMovie",
-        description: "Este proyecto es una aplicación web y móvil de una Single Page Application (SPA) desarrollada con React, JavaScript, Material UI y JSON Server. Permite gestionar una lista de películas con funcionalidades como agregar a favoritos, marcar como vistas o por ver, y una sección exclusiva para administradores.",
-        image: "src/assets/images/ki-movie.png",
-        link: "https://ki-movie.netlify.app/",
-        repository: "https://github.com/Kilianhc/React-Project",
-        technologies: ["React", "JSON Server", "JavaScript", "Material UI"]
-    },
-    {
-        title: "This is Football !",
-        description: "Un proyecto donde experimento con mecánicas, gráficos y lógica en JavaScript. Este proyecto me ha permitido profundizar en la programación orientada a objetos y el manejo de eventos en juegos interactivos.",
-        image: "src/assets/images/thisis.png",
-        link: "https://kilianhc.github.io/project-1-The-Game/",
-        repository: "https://github.com/Kilianhc/project-1-The-Game",
-        technologies: ["JavaScript", "HTML5", "CSS3"]
-    }
-];
-
-
 const ProjectsSection = () => {
     const [ref, isVisible] = useVisibility(0.3);
     const { t } = useTranslation();
+    const projects = [
+
+        {
+            title: "FootballStats",
+            description: t("projects.description1"),
+            image: "src/assets/images/football-stats.png",
+            link: "https://analyststats.netlify.app/",
+            repository: "https://github.com/Kilianhc/FootballStats-Frontend",
+            technologies: ["React", "JavaScript", "Node.js", "Express", "MongoDB", "MUI", "JWT", "Axios", "Mongoose", "Google Gemini AI", "Google Perspective API", "bcrypt.js", "Express Rate Limit"]
+        },
+        {
+            title: "KiMovie",
+            description: t("projects.description2"),            image: "src/assets/images/ki-movie.png",
+            link: "https://ki-movie.netlify.app/",
+            repository: "https://github.com/Kilianhc/React-Project",
+            technologies: ["React", "JSON Server", "JavaScript", "Material UI"]
+        },
+        {
+            title: "This is Football !",
+            description: t("projects.description3"),            image: "src/assets/images/thisis.png",
+            link: "https://kilianhc.github.io/project-1-The-Game/",
+            repository: "https://github.com/Kilianhc/project-1-The-Game",
+            technologies: ["JavaScript", "HTML5", "CSS3"]
+        }
+    ];
 
     return (
         <Box id="projects" ref={ref} sx={{ padding: "80px 0" }}>
             <Container>
                 <Typography mb={5} variant="h4" gutterBottom>
-                    Proyectos Destacados
+                    {t("projects.title")}
                 </Typography>
                 <Grid justifyContent="center" container spacing={4}>
                     {projects.map((project, index) => (
@@ -122,7 +118,7 @@ const ProjectsSection = () => {
                                                             href={project.link}
                                                             target="_blank"
                                                         >
-                                                            Ver Proyecto
+                                                            {t("projects.button1")}
                                                         </Button>
                                                         <Button
                                                             variant="outlined"
@@ -130,7 +126,7 @@ const ProjectsSection = () => {
                                                             href={project.repository}
                                                             target="_blank"
                                                         >
-                                                            Ver Repositorio
+                                                            {t("projects.button2")}
                                                         </Button>
                                                     </Box>
                                                 </>

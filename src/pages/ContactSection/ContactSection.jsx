@@ -23,10 +23,10 @@ const ContactSection = () => {
         <Fade in={isVisible} timeout={2000}>
           <Box>
             <Typography variant="h4" gutterBottom textAlign="left">
-              Contacto
+              {t("contact.title")}
             </Typography>
             <Typography variant="body1" paragraph>
-              Puedes contactarme a través de mi correo electrónico o redes :
+              {t("contact.text")}
             </Typography>
 
             <Stack spacing={2} alignItems="center" mt={4}>

@@ -13,37 +13,35 @@ import { SiMongodb, SiExpress, SiMongoose, SiMui } from "react-icons/si";
 import useVisibility from "../../Hooks/useVisibility";
 import { useTranslation } from "react-i18next";
 
+const TechnologiesSection = () => {
+  const [ref, isVisible] = useVisibility(0.3);
+  const theme = useTheme(); // Accedemos al tema actual
+  const { t } = useTranslation();
 // Categorías y tecnologías
 const categorizedTechnologies = {
-  "Frontend": [
+  [t("technologies.subtitle1")]: [
     { name: "React", icon: <FaReact size={80} color="#61DBFB" /> },
     { name: "JavaScript", icon: <FaJs size={80} color="#F7DF1E" /> },
     { name: "HTML5", icon: <FaHtml5 size={80} color="#E34F26" /> },
     { name: "CSS3", icon: <FaCss3Alt size={80} color="#264de4" /> },
     { name: "Material UI", icon: <SiMui size={80} color="#007FFF" /> },
   ],
-  "Backend": [
+  [t("technologies.subtitle2")]: [
     { name: "Node.js", icon: <FaNodeJs size={80} color="#68A063" /> },
     { name: "Express.js", icon: <SiExpress size={80} color="green" /> },
     { name: "MongoDB", icon: <SiMongodb size={80} color="#4DB33D" /> },
     { name: "Mongoose", icon: <SiMongoose size={80} color="red" /> },
     { name: "JWT", icon: <FaLock size={80} color="#f57c00" /> },
   ],
-  "Otros": [
+  [t("technologies.subtitle3")]: [
     { name: "Git & GitHub", icon: <FaGithub size={80} color="purple" /> },
   ],
 };
-
-const TechnologiesSection = () => {
-  const [ref, isVisible] = useVisibility(0.3);
-  const theme = useTheme(); // Accedemos al tema actual
-  const { t } = useTranslation();
-
   return (
     <Box id="technologies"ref={ref} sx={{ padding: "80px 0" }}>
       <Container>
         <Typography variant="h4" gutterBottom mb={2} >
-          Tecnologías
+          {t("technologies.title")}
         </Typography>
 
         {Object.entries(categorizedTechnologies).map(([category, techs], index) => (

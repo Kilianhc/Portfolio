@@ -12,7 +12,7 @@ const ProjectsSection = () => {
         {
             title: "FootballStats",
             description: t("projects.description1"),
-            image: "./public/images/football-stats.png",
+            image: "/images/football-stats.png",
             link: "https://analyststats.netlify.app/",
             repository: "https://github.com/Kilianhc/FootballStats-Frontend",
             technologies: ["React", "JavaScript", "Node.js", "Express", "MongoDB", "MUI", "JWT", "Axios", "Mongoose", "Google Gemini AI",
@@ -21,7 +21,7 @@ const ProjectsSection = () => {
         {
             title: "KiMovie",
             description: t("projects.description2"),
-            image: "./public/images/ki-movie.png",
+            image: "/images/ki-movie.png",
             link: "https://ki-movie.netlify.app/",
             repository: "https://github.com/Kilianhc/React-Project",
             technologies: ["React", "JSON Server", "JavaScript", "Material UI"]
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
         {
             title: "This is Football !",
             description: t("projects.description3"),
-            image: "./public/images/thisis.png",
+            image: "/images/thisis.png",
             link: "https://kilianhc.github.io/project-1-The-Game/",
             repository: "https://github.com/Kilianhc/project-1-The-Game",
             technologies: ["JavaScript", "HTML5", "CSS3"]

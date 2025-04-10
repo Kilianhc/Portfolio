@@ -6,7 +6,7 @@ import { Chip } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 const ProjectsSection = () => {
-    const [ref, isVisible] = useVisibility(0.3);
+    const [ref, isVisible] = useVisibility(0.2);
     const { t } = useTranslation();
     const projects = [
         {
@@ -25,6 +25,14 @@ const ProjectsSection = () => {
             link: "https://ki-movie.netlify.app/",
             repository: "https://github.com/Kilianhc/React-Project",
             technologies: ["React", "JSON Server", "JavaScript", "Material UI"]
+        },
+        {
+            title: "Portfolio Personal",
+            description: t("projects.description4"),
+            image: "/Portfolio/images/portfolio.png",
+            link: "https://kilianhc.github.io/Portfolio/",
+            repository: "https://github.com/Kilianhc/Portfolio",
+            technologies: ["React", "HTML", "CSS", "i18next", "JavaScript", "Material UI"]
         },
         {
             title: "This is Football !",

@@ -23,7 +23,7 @@ const resources = {
         description4: "I have experience in JavaScript (ES6+), HTML5, CSS3, and the React library. I also have experience using Material UI, Node.js, Express.js, MongoDB, and, to a lesser extent, Java and MySQL.",
       },
       projects: {
-        title: " Outstandings Projects",
+        title: " Featured Projects",
         description1: "FootballStats is a full-stack application developed with the MERN stack (MongoDB, Express, React, and Node.js). It allows you to manage football statistics for teams and players, offering tools for both analysts and coaches.",
         description2: "KiMovie is a Single Page Application (SPA) developed with React, JavaScript, Material UI, and JSON Server. It allows you to manage a list of movies with features such as adding to favorites, marking as watched or yet to be seen, and a dedicated admin section.",
         description3: "A project where I experiment with mechanics, graphics, and logic in JavaScript. This project has allowed me to delve deeper into object-oriented programming and event handling in interactive games.",

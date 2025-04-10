@@ -44,58 +44,25 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <Box
-      ref={ref}
-      id="hero"
-      sx={{
-        position: "relative",
-        height: "100vh",
-        width: "100%",
-        overflow: "hidden",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "blue",
-        textAlign: "center",
-        backgroundColor: "black",
-      }}
-    >
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 1,
-        }}
-      />
+    <Box ref={ref} id="hero" sx={{
+      position: "relative", height: "100vh", width: "100%", overflow: "hidden", display: "flex",
+      justifyContent: "center", alignItems: "center", color: "blue", textAlign: "center", backgroundColor: "black"
+    }}>
+      <canvas ref={canvasRef} style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }} />
       <Box sx={{ zIndex: 2 }}>
-        <Typography
-          variant="h2"
-          gutterBottom
-          sx={{
-            fontFamily: "monospace",
-            textShadow: "0 0 10px white",
-            color:"white",
-            animation: isVisible ? "fadeIn 5s ease-out" : "none",
-          }}
-        >
+        <Typography variant="h2" gutterBottom sx={{
+          fontFamily: "monospace", textShadow: "0 0 10px white", color: "white",
+          animation: isVisible ? "fadeIn 5s ease-out" : "none"
+        }}>
           Kilian Hernández
         </Typography>
-        <Typography
-          variant="h4"
-          sx={{
-            fontFamily: "monospace",
-            textShadow: "0 0 5px white",
-            color:"white",
-            animation: isVisible ? "fadeIn 5s ease-out" : "none",
-          }}
-        >
+        <Typography variant="h4" sx={{
+          fontFamily: "monospace", textShadow: "0 0 5px white", color: "white",
+          animation: isVisible ? "fadeIn 5s ease-out" : "none"
+        }}>
           {t("hero.subtitle")}
         </Typography>
       </Box>
-
-      {/* Optional: fadeIn keyframes */}
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: scale(0.95); }

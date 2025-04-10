@@ -11,21 +11,11 @@ const SeeMore = ({ collapsedContent, expandedContent, fullWidthButton = false })
     <Box>
       {!isExpanded && collapsedContent}
       <Collapse in={isExpanded}>{expandedContent}</Collapse>
-
-      <Button
-        onClick={handleToggle}
-        variant="contained"
-        sx={{
-          mt: 2,
-          width: fullWidthButton ? "100%" : "fit-content",
-          display: fullWidthButton ? "block" : "inline-block",
-          alignSelf: fullWidthButton ? "center" : "flex-start",
-          padding: "6px 16px",
-          fontSize: "0.875rem",
-          textTransform: "none",
-          borderRadius: "8px",
-        }}
-      >
+      <Button onClick={handleToggle} variant="contained" sx={{
+        mt: 2, width: fullWidthButton ? "100%" : "fit-content",
+        display: fullWidthButton ? "block" : "inline-block", alignSelf: fullWidthButton ? "center" : "flex-start",
+        padding: "6px 16px", fontSize: "0.875rem", textTransform: "none", borderRadius: "8px"
+      }}>
         {isExpanded ? t("seemore.less") : t("seemore.more")}
       </Button>
     </Box>

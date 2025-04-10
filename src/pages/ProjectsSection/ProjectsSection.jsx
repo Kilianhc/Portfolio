@@ -9,25 +9,27 @@ const ProjectsSection = () => {
     const [ref, isVisible] = useVisibility(0.3);
     const { t } = useTranslation();
     const projects = [
-
         {
             title: "FootballStats",
             description: t("projects.description1"),
             image: "src/assets/images/football-stats.png",
             link: "https://analyststats.netlify.app/",
             repository: "https://github.com/Kilianhc/FootballStats-Frontend",
-            technologies: ["React", "JavaScript", "Node.js", "Express", "MongoDB", "MUI", "JWT", "Axios", "Mongoose", "Google Gemini AI", "Google Perspective API", "bcrypt.js", "Express Rate Limit"]
+            technologies: ["React", "JavaScript", "Node.js", "Express", "MongoDB", "MUI", "JWT", "Axios", "Mongoose", "Google Gemini AI",
+                "Google Perspective API", "bcrypt.js", "Express Rate Limit"]
         },
         {
             title: "KiMovie",
-            description: t("projects.description2"),            image: "src/assets/images/ki-movie.png",
+            description: t("projects.description2"),
+            image: "src/assets/images/ki-movie.png",
             link: "https://ki-movie.netlify.app/",
             repository: "https://github.com/Kilianhc/React-Project",
             technologies: ["React", "JSON Server", "JavaScript", "Material UI"]
         },
         {
             title: "This is Football !",
-            description: t("projects.description3"),            image: "src/assets/images/thisis.png",
+            description: t("projects.description3"),
+            image: "src/assets/images/thisis.png",
             link: "https://kilianhc.github.io/project-1-The-Game/",
             repository: "https://github.com/Kilianhc/project-1-The-Game",
             technologies: ["JavaScript", "HTML5", "CSS3"]
@@ -44,64 +46,31 @@ const ProjectsSection = () => {
                     {projects.map((project, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <Fade in={isVisible} timeout={2000}>
-                                <Card
-                                    sx={{
-                                        color: "white",
-                                        boxShadow: 3,
-                                        maxWidth: "350px",
-                                        borderRadius: "12px",
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        justifyContent: "space-between",
-                                        transition: "all 0.3s ease-in-out",
-                                        "&:hover": {
-                                            transform: "scale(1.05)",
-                                            boxShadow: 10,
-                                            cursor: "pointer",
-                                        },
-                                    }}
-                                >
-
-                                    <CardMedia
-                                        component="img"
-                                        height="200"
-                                        image={project.image}
-                                        alt={project.title}
-                                        sx={{
-                                            objectFit: "cover",
-                                            transition: "0.3s",
-                                            "&:hover": {
-                                                opacity: 0.9,
-                                            },
-                                        }}
-                                    />
-
+                                <Card sx={{
+                                    color: "white", boxShadow: 3, maxWidth: "350px", borderRadius: "12px", display: "flex", flexDirection: "column", justifyContent: "space-between",
+                                    transition: "all 0.3s ease-in-out", "&:hover": { transform: "scale(1.05)", boxShadow: 10, cursor: "pointer" }
+                                }}>
+                                    <CardMedia component="img" height="200" image={project.image} alt={project.title} sx={{
+                                        objectFit: "cover",
+                                        transition: "0.3s", "&:hover": { opacity: 0.7 }
+                                    }} />
                                     <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                                         <Typography variant="h6" gutterBottom>
                                             {project.title}
                                         </Typography>
-
-                                        <SeeMore fullWidthButton
-                                            collapsedContent={
-                                                <Typography
-                                                    variant="body2"
-                                                    sx={{
-                                                        overflow: "hidden",
-                                                        textOverflow: "ellipsis",
-                                                        display: "-webkit-box",
-                                                        WebkitLineClamp: 4,
-                                                        WebkitBoxOrient: "vertical",
-                                                    }}
-                                                >
-                                                    {project.description}
-                                                </Typography>
-                                            }
+                                        <SeeMore fullWidthButton collapsedContent={
+                                            <Typography variant="body2" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box",
+                                                WebkitLineClamp: 4, WebkitBoxOrient: "vertical"
+                                            }}>
+                                                {project.description}
+                                            </Typography>
+                                        }
                                             expandedContent={
                                                 <>
                                                     <Typography variant="body2" paragraph>
                                                         {project.description}
                                                     </Typography>
-
                                                     {project.technologies && (
                                                         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 2 }}>
                                                             {project.technologies.map((tech, idx) => (
@@ -109,23 +78,11 @@ const ProjectsSection = () => {
                                                             ))}
                                                         </Box>
                                                     )}
-
-
                                                     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                                        <Button
-                                                            variant="outlined"
-                                                            color="primary"
-                                                            href={project.link}
-                                                            target="_blank"
-                                                        >
+                                                        <Button variant="outlined" color="primary" href={project.link} target="_blank">
                                                             {t("projects.button1")}
                                                         </Button>
-                                                        <Button
-                                                            variant="outlined"
-                                                            color="primary"
-                                                            href={project.repository}
-                                                            target="_blank"
-                                                        >
+                                                        <Button variant="outlined" color="primary" href={project.repository} target="_blank">
                                                             {t("projects.button2")}
                                                         </Button>
                                                     </Box>
@@ -134,7 +91,6 @@ const ProjectsSection = () => {
                                         />
                                     </CardContent>
                                 </Card>
-
                             </Fade>
                         </Grid>
                     ))}

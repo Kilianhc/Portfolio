@@ -47,7 +47,6 @@ const resources = {
         more: "See more",
         less: "See less"
       }
-      // Puedes añadir más secciones aquí
     }
   },
   es: {
@@ -95,7 +94,6 @@ const resources = {
         more: "Ver más",
         less: "Ver menos"
       }
-      // Igual, añade más aquí si quieres
     }
   }
 };

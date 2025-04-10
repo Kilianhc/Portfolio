@@ -6,9 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
-  const [showMore, setShowMore] = useState(false);
   const { t } = useTranslation();
-  const handleToggle = () => setShowMore(!showMore);
 
   return (
     <Box id="about" mb={3} mt={3} ref={ref} sx={{ padding: "80px 0" }}>
@@ -17,54 +15,38 @@ const AboutSection = () => {
           {t("about.title")}
         </Typography>
         <Fade in={isVisible} timeout={2000}>
-          <Grid container spacing={5} alignItems="left" sx={{
-            flexDirection: { xs: "column", lg: "row" },
-            flexWrap: { xs: "wrap", lg: "nowrap" },
-          }}>
-
+          <Grid container spacing={5} alignItems="left" sx={{ flexDirection: { xs: "column", lg: "row" }, flexWrap: { xs: "wrap", lg: "nowrap" } }}>
             {/* Columna de la imagen */}
             <Grid mb={5} item xs={12} lg={5}>
-              <Box
-                component="img"
-                src="src/assets/images/profile.jpg" // Reemplaza esto por la ruta de tu imagen
-                alt="Kilian Hernández"
-                sx={{
-                  width: {
-                    xs: "50%",  // para pantallas pequeñas
-                    sm: "25%",  // pantallas pequeñas a medianas
-                    lg: "100%", // pantallas grandes
-                  },
-                  maxWidth: "800px",
-                  borderRadius: "12px",
-                  boxShadow: 4,
-                  display: "block",
-                  margin: "0 auto",
-                }}
-              />
+              <Box component="img" src="src/assets/images/profile.jpg" alt="Kilian Hernández" sx={{
+                width: {
+                  xs: "50%",  // para pantallas pequeñas
+                  sm: "25%",  // pantallas pequeñas a medianas
+                  lg: "100%", // pantallas grandes
+                },
+                maxWidth: "800px", borderRadius: "12px", boxShadow: 4, display: "block", margin: "0 auto"
+              }} />
             </Grid>
             {/* Columna del texto */}
             <Grid item xs={12} lg={7}>
-
-
-              <SeeMore
-                collapsedContent={
-                  <Typography textAlign="justify" variant="body1" paragraph>
-                    {t("about.description1")}
-                  </Typography>
-                }
+              <SeeMore collapsedContent={
+                <Typography textAlign="justify" variant="body1" paragraph>
+                  {t("about.description1")}
+                </Typography>
+              }
                 expandedContent={
                   <>
                     <Typography textAlign="justify" variant="body1" paragraph>
-                    {t("about.description1")}
+                      {t("about.description1")}
                     </Typography>
                     <Typography textAlign="justify" variant="body1" paragraph>
-                    {t("about.description2")}
+                      {t("about.description2")}
                     </Typography>
                     <Typography textAlign="justify" variant="body1" paragraph>
-                    {t("about.description3")}
+                      {t("about.description3")}
                     </Typography>
                     <Typography textAlign="justify" variant="body1" paragraph>
-                    {t("about.description4")}
+                      {t("about.description4")}
                     </Typography>
                   </>
                 }

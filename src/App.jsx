@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material"; // Importa CssBaseline
+import { CssBaseline } from "@mui/material";
 import Navbar from "./GeneralComponents/Navbar";
 import HeroSection from "./pages/HeroSection/HeroSection";
 import AboutSection from "./pages/AboutSection/AboutSection";
@@ -49,11 +49,8 @@ function App() {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <CssBaseline /> {/* Esto es crucial */}
-      <div style={{ 
-        minHeight: '100vh',
-        backgroundColor: 'background.default' // Usa el color del tema
-      }}>
+      <CssBaseline />
+      <div style={{ minHeight: '100vh', backgroundColor: 'background.default' }}> {/* Usa el color del tema */}
         <Navbar toggleDarkMode={() => setDarkMode(!darkMode)} darkMode={darkMode} />
         <HeroSection />
         <AboutSection />

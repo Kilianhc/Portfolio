@@ -1,18 +1,7 @@
 import React from "react";
 import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  Box,
-  Switch,
-  useMediaQuery,
-  Paper
+  AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem,
+  ListItemText, Box, Switch, useMediaQuery, Paper
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -42,28 +31,16 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
   return (
     <AppBar position="sticky" sx={{ bgcolor: "black" }}>
       <Toolbar>
-        <Typography
-          variant="h6"
-          onClick={() => scrollToSection("hero")}
-          sx={{ flexGrow: 1, cursor: "pointer", color: "white" }}
-        >
+        <Typography variant="h6" onClick={() => scrollToSection("hero")} sx={{ flexGrow: 1, cursor: "pointer", color: "white" }}>
           Kilian D. Hernández Chirino
         </Typography>
-
         {isMobile ? (
           <>
             <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
               <MenuIcon sx={{ color: "white" }} />
             </IconButton>
             <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-              <Paper
-                sx={{
-                  width: 250,
-                  height: '100%',
-                  bgcolor: darkMode ? 'black' : 'white',
-                  color: darkMode ? 'white' : 'black'
-                }}
-              >
+              <Paper sx={{ width: 250, height: '100%', bgcolor: darkMode ? 'black' : 'white', color: darkMode ? 'white' : 'black' }}>
                 <Box sx={{ p: 2 }}>
                   <Box display="flex" justifyContent="flex-end">
                     <IconButton onClick={() => setOpen(false)}>
@@ -72,20 +49,11 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                   </Box>
                   <List>
                     {sections.map((section) => (
-                      <ListItem
-                        sx={{
-                          cursor: "pointer",
-                          color: darkMode ? 'white' : 'black'
-                        }}
-                        button
-                        key={section.id}
-                        onClick={() => scrollToSection(section.id)}
-                      >
+                      <ListItem sx={{ cursor: "pointer", color: darkMode ? 'white' : 'black' }} button key={section.id} onClick={() => scrollToSection(section.id)}>
                         <ListItemText primary={t(section.labelKey)} />
                       </ListItem>
                     ))}
                   </List>
-
                   <Box display="flex" justifyContent="space-between" alignItems="center" mt={2} mb={2}>
                     <Typography variant="body2">{t("navbar.darkMode")}</Typography>
                     <Switch checked={darkMode} onChange={toggleDarkMode} />
@@ -102,19 +70,14 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           </>
         ) : (
           sections.map((section) => (
-            <Button
-              key={section.id}
-              sx={{ color: "white" }}
-              onClick={() => scrollToSection(section.id)}
-            >
+            <Button key={section.id} sx={{ color: "white" }} onClick={() => scrollToSection(section.id)}>
               {t(section.labelKey)}
             </Button>
           ))
         )}
-
         <Box ml={5} sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
           <Typography variant="body2" mr={1} sx={{ color: "white" }}>
-          {t("navbar.darkMode")}
+            {t("navbar.darkMode")}
           </Typography>
           <Switch checked={darkMode} onChange={toggleDarkMode} />
           <Typography variant="body2">{t("navbar.language")}</Typography>

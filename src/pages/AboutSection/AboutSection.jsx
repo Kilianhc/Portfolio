@@ -18,7 +18,7 @@ const AboutSection = () => {
           <Grid container spacing={5} alignItems="left" sx={{ flexDirection: { xs: "column", lg: "row" }, flexWrap: { xs: "wrap", lg: "nowrap" } }}>
             {/* Columna de la imagen */}
             <Grid mb={5} item xs={12} lg={5}>
-              <Box component="img" src="/images/profile.jpg" alt="Kilian Hernández" sx={{
+              <Box component="img" src="/Portfolio/images/profile.jpg" alt="Kilian Hernández" sx={{
                 width: {
                   xs: "50%",  // para pantallas pequeñas
                   sm: "25%",  // pantallas pequeñas a medianas

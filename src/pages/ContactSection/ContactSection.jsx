@@ -2,10 +2,12 @@ import React from "react";
 import { Box, Container, Typography, Button, Fade, Stack } from "@mui/material";
 import useVisibility from "../../Hooks/useVisibility";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
-
+  const { t } = useTranslation();
+  
   return (
     <Box
       id="contact"

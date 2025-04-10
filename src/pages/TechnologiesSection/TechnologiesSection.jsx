@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiMongoose, SiMui } from "react-icons/si";
 import useVisibility from "../../Hooks/useVisibility";
+import { useTranslation } from "react-i18next";
 
 // Categorías y tecnologías
 const categorizedTechnologies = {
@@ -36,6 +37,7 @@ const categorizedTechnologies = {
 const TechnologiesSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
   const theme = useTheme(); // Accedemos al tema actual
+  const { t } = useTranslation();
 
   return (
     <Box id="technologies"ref={ref} sx={{ padding: "80px 0" }}>

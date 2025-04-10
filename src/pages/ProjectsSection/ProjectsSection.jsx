@@ -3,6 +3,7 @@ import { Container, Fade, Typography, Box, Grid, Button, Card, CardMedia, CardCo
 import useVisibility from "../../Hooks/useVisibility";
 import SeeMore from "../../GeneralComponents/SeeMore";
 import { Chip } from "@mui/material"
+import { useTranslation } from "react-i18next";
 
 const projects = [
 
@@ -35,6 +36,7 @@ const projects = [
 
 const ProjectsSection = () => {
     const [ref, isVisible] = useVisibility(0.3);
+    const { t } = useTranslation();
 
     return (
         <Box id="projects" ref={ref} sx={{ padding: "80px 0" }}>

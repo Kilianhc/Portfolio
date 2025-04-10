@@ -1,7 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+
+  const { t } = useTranslation();
+
   return (
     <Box
       component="footer"
@@ -14,7 +18,7 @@ const Footer = () => {
       }}
     >
       <Typography variant="body2">
-        © 2025 Kilian D. Hernández Chirino. Todos los derechos reservados.
+        {t("footer.text")}
       </Typography>
     </Box>
   );

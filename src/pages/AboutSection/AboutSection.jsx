@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { Container, Typography, Box, Fade, Button, Grid } from "@mui/material";
 import useVisibility from "../../Hooks/useVisibility";
 import SeeMore from "../../GeneralComponents/SeeMore";
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
   const [showMore, setShowMore] = useState(false);
-
+  const { t } = useTranslation();
   const handleToggle = () => setShowMore(!showMore);
 
   return (
     <Box id="about" mb={3} mt={3} ref={ref} sx={{ padding: "80px 0" }}>
       <Container>
         <Typography mb={5} variant="h4" gutterBottom>
-          Sobre mí
+          {t("about.title")}
         </Typography>
         <Fade in={isVisible} timeout={2000}>
           <Grid container spacing={5} alignItems="left" sx={{
@@ -22,7 +23,7 @@ const AboutSection = () => {
           }}>
 
             {/* Columna de la imagen */}
-            <Grid item xs={12} lg={5}>
+            <Grid mb={5} item xs={12} lg={5}>
               <Box
                 component="img"
                 src="src/assets/images/profile.jpg" // Reemplaza esto por la ruta de tu imagen

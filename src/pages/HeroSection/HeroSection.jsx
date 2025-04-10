@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import useVisibility from "../../Hooks/useVisibility";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
   const [ref, isVisible] = useVisibility(0.3);
   const canvasRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -89,7 +91,7 @@ const HeroSection = () => {
             animation: isVisible ? "fadeIn 5s ease-out" : "none",
           }}
         >
-          Desarrollador Web
+          {t("hero.subtitle")}
         </Typography>
       </Box>
 

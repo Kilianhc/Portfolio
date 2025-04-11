@@ -5,7 +5,7 @@ import SeeMore from "../../GeneralComponents/SeeMore";
 import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
-  const [ref, isVisible] = useVisibility(0.3);
+  const [ref, isVisible] = useVisibility(0.2);
   const { t } = useTranslation();
 
   return (

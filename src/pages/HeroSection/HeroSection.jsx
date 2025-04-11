@@ -4,7 +4,7 @@ import useVisibility from "../../Hooks/useVisibility";
 import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
-  const [ref, isVisible] = useVisibility(0.3);
+  const [ref, isVisible] = useVisibility(0.2);
   const canvasRef = useRef(null);
   const { t } = useTranslation();
 
@@ -45,8 +45,8 @@ const HeroSection = () => {
 
   return (
     <Box ref={ref} id="hero" sx={{
-      position: "relative", height: "100vh", width: "100%", overflow: "hidden", display: "flex",
-      justifyContent: "center", alignItems: "center", color: "blue", textAlign: "center", backgroundColor: "black"
+      position: "relative", height: "95vh", width: "100%", overflow: "hidden", display: "flex",
+      justifyContent: "center", alignItems: "center", color: "blue", textAlign: "center", backgroundColor: "black", paddingBottom: "100px"
     }}>
       <canvas ref={canvasRef} style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }} />
       <Box sx={{ zIndex: 2 }}>

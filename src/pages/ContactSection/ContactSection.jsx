@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
-  const [ref, isVisible] = useVisibility(0.3);
+  const [ref, isVisible] = useVisibility(0.2);
   const { t } = useTranslation();
   
   return (

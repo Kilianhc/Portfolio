@@ -6,7 +6,7 @@ import useVisibility from "../../Hooks/useVisibility";
 import { useTranslation } from "react-i18next";
 
 const TechnologiesSection = () => {
-  const [ref, isVisible] = useVisibility(0.3);
+  const [ref, isVisible] = useVisibility(0.1);
   const theme = useTheme(); // Accedemos al tema actual
   const { t } = useTranslation();
   // Categorías y tecnologías

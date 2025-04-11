@@ -6,7 +6,7 @@ import { Chip } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 const ProjectsSection = () => {
-    const [ref, isVisible] = useVisibility(0.2);
+    const [ref, isVisible] = useVisibility(0.1);
     const { t } = useTranslation();
     const projects = [
         {
@@ -35,6 +35,14 @@ const ProjectsSection = () => {
             technologies: ["React", "HTML", "CSS", "i18next", "JavaScript", "Material UI"]
         },
         {
+            title: "To-Travel App",
+            description: t("projects.description5"),
+            image: "/Portfolio/images/to-travel.png",
+            link: "https://kilianhc.github.io/MiniProject-React",
+            repository: "https://github.com/Kilianhc/MiniProject-React",
+            technologies: ["React", "HTML", "CSS", "JavaScript"]
+        },
+        {
             title: "This is Football !",
             description: t("projects.description3"),
             image: "/Portfolio/images/thisis.png",
@@ -50,7 +58,7 @@ const ProjectsSection = () => {
                 <Typography mb={5} variant="h4" gutterBottom>
                     {t("projects.title")}
                 </Typography>
-                <Grid justifyContent="center" container spacing={4}>
+                <Grid justifyContent="center" container spacing={6}>
                     {projects.map((project, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <Fade in={isVisible} timeout={2000}>
